@@ -5,18 +5,29 @@
 # No, I don't know why I'm making this so user-friendly.
 
 
+# make a user and check if the groups have a space in them or not
+
 echo -e "
 
 Please enter the name of the user to create: \c"
 read username
 
-echo "
+echo -e "
 Please enter the groups you would like the user to be in (No spaces, separated by commas): \c"
 read groups
 
-# I may or may not add some logic here to make sure the groups were formatted correctly. For now, it will just (hopefully) error out.
+case "$groups" in
+  *\ *)
+    echo "Oops! A space was detected. Try again without spaces."
+    ;;
+  *,*)
+    useradd -m -G $groups $username
+    ;;
+  *)
+    echo "no comma"
+    ;;
+esac
 
-useradd -m -G $groups $username
 
 
 
