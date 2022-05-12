@@ -115,7 +115,8 @@ Please enter an email for git: \c"
    sudo make clean install
    
    cd ~
-   echo "exec dwm" >> .xinitrc
+   sed a "exec dwm" .xinitrc
+   
    
    ;;
    [Nn]* ) 
@@ -141,6 +142,11 @@ Please enter an email for git: \c"
    cd ../dmenu-5.1
    sudo make clean install
    
+   cd ..
+   sudo rm -rf work
+   sed a "exec dwm" .xinitrc
+   
+   break
    ;;
    * )
    echo "Please answer either y (yes) or n (no)"
