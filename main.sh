@@ -87,9 +87,32 @@ case $yntwo in
    echo "Downloading through git..."
    sudo pacman -S --noconfirm git
    cd ez-dwm-out
+   
+   echo -e "
+Please enter an email for git: \c"
+   read email
+   echo -e "Please enter a username for git:"
+   
    git clone https://git.suckless.org/dwm
    git clone https://git.suckless.org/st
    git clone https://git.suckless.org/dmenu
+   
+   cd dwm
+   make
+   sudo make clean install
+   
+   cd ../st
+   make
+   sudo make clean install
+   
+   cd ../dmenu
+   make
+   sudo make clean install
+   
+   cd ../dwm
+   
+   
+   
    ;;
    [Nn]* ) 
    echo "Downloading via wget..."
