@@ -13,7 +13,6 @@ fi
 
 
 # Case statements that (hopefully) make this stage foolproof.
-
 echo -e "
 Please enter the name of the user to create: \c"
 read username
@@ -34,14 +33,15 @@ read groups
 
 case "$groups" in
   *\ * )
-    echo "Oops! A space was detected. Try again without spaces."
-    exit
+    echo "
+Oops! A space was detected. Try again without spaces."
     ;;
   *,* )
   break
     ;;
   * )
-    echo "Weird format detected. Either you only wanted one group, messed up badly, or forgot commas."
+    echo "
+Weird format detected. Either you only wanted one group, messed up badly, or forgot commas."
   while true; do
     echo -e "
 Continue anyway? [y/n] \c"
@@ -50,7 +50,7 @@ Continue anyway? [y/n] \c"
         [Yy]* )
         break
         ;;
-        [Nn]* ) 
+        [Nn]* )
         exit
         ;;
         * )
@@ -58,10 +58,10 @@ Continue anyway? [y/n] \c"
         ;;
     esac
   done
+  break
     ;;
 esac
 done
-
 
 useradd -m -G $groups $username
 
@@ -87,11 +87,13 @@ case $yntwo in
    echo "Downloading through git..."
    sudo pacman -S --noconfirm git
    cd ez-dwm-out
-   
+   git clone https://git.suckless.org/dwm
+   git clone https://git.suckless.org/st
+   git clone https://git.suckless.org/dmenu
    ;;
    [Nn]* ) 
    echo "Downloading via wget..."
-   sudo pacman -S wget
+   sudo pacman -S --noconfirm wget
    ;;
    * )
    echo "Please answer either y (yes) or n (no)"
