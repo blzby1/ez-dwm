@@ -91,7 +91,11 @@ case $yntwo in
    echo -e "
 Please enter an email for git: \c"
    read email
-   echo -e "Please enter a username for git:"
+   echo -e "Please enter a username for git: \c"
+   read gituser
+   
+   git config --global user.email $email
+   git config --global user.name $gituser
    
    git clone https://git.suckless.org/dwm
    git clone https://git.suckless.org/st
