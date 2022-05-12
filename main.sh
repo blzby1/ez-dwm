@@ -78,14 +78,15 @@ cd ~
 mkdir work
 mkdir ez-dwm-out
 
-while true; do
 echo -e "
 Use git to download dwm, st and dmenu? (This will make patching and adding modifications easier) [y/n] \c"
 read yntwo
 case $yntwo in
    [Yy]* )
    echo "Downloading through git..."
-   sudo pacman -S --noconfirm git
+   
+   # The line below is where you can customize what packages you want to download initially. I have put some minimal packages here, but you can add or remove packages as you please. 
+   sudo pacman -S --noconfirm git xorg-server xorg-xinit xorg-xrandr
    cd ez-dwm-out
    
    echo -e "
@@ -113,21 +114,28 @@ Please enter an email for git: \c"
    make
    sudo make clean install
    
-   cd ../dwm
-   
-   
+   cd ~
+   echo "exec dwm" >> .xinitrc
    
    ;;
    [Nn]* ) 
    echo "Downloading via wget..."
-   sudo pacman -S --noconfirm wget
+   sudo pacman -S --noconfirm wget xorg-server xorg-xinit xorg-xrandr
+   
+   cd work
+   wget https://dl.suckless.org/dwm/dwm-6.3.tar.gz
+   wget https://dl.suckless.org/st/st-0.8.5.tar.gz
+   wget https://dl.suckless.org/tools/dmenu-5.1.tar.gz
+   
+   cd ~
+   
    ;;
    * )
    echo "Please answer either y (yes) or n (no)"
    ;;
 esac
+  
 done
-
 
 
 
