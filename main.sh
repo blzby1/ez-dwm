@@ -127,7 +127,19 @@ Please enter an email for git: \c"
    wget https://dl.suckless.org/st/st-0.8.5.tar.gz
    wget https://dl.suckless.org/tools/dmenu-5.1.tar.gz
    
-   cd ~
+   cd ../ez-dwm-out
+   tar -xzf ../work/dwm-6.3.tar.gz
+   tar -xzf ../work/st-0.8.5.tar.gz
+   tar -xzf ../work/dmenu-5.1.tar.gz
+   
+   cd dwm-6.3
+   sudo make clean install
+   
+   cd ../st-0.8.5
+   sudo make clean install
+   
+   cd ../dmenu-5.1
+   sudo make clean install
    
    ;;
    * )
