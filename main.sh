@@ -20,16 +20,16 @@ read username
 
 case $username in
   "")
-  echo "Invalid username."
+  echo "Invalid username. Exiting..."
   exit
   ;;
   * )
-  echo "valid"
   ;;
 esac
 
+while true; do
 echo -e "
-Please enter the groups you would like the user to be in (No spaces, separated by commas): \c"
+Please enter the groups you would like the user to be in. (No spaces, separated by commas): \c"
 read groups
 
 case "$groups" in
@@ -38,14 +38,17 @@ case "$groups" in
     exit
     ;;
   *,* )
+  break
     ;;
   * )
     echo "Weird format detected. Either you only wanted one group, messed up badly, or forgot commas."
+  while true; do
     echo -e "
 Continue anyway? [y/n] \c"
     read yn
-    case $yn in
+  case $yn in
         [Yy]* )
+        break
         ;;
         [Nn]* ) 
         exit
@@ -54,8 +57,10 @@ Continue anyway? [y/n] \c"
         echo "Please answer either y (yes) or n (no)"
         ;;
     esac
+  done
     ;;
 esac
+done
 
 
 useradd -m -G $groups $username
@@ -71,8 +76,28 @@ pacman -S --noconfirm base base-devel
 su $username
 cd ~
 mkdir work
-rm -rf work # ******REMOVE THIS LATER!!!!!!!!!!!!******
+mkdir ez-dwm-out
 
+while true; do
+echo -e "
+Use git to download dwm, st and dmenu? (This will make patching and adding modifications easier) [y/n] \c"
+read yntwo
+case $yntwo in
+   [Yy]* )
+   echo "Downloading through git..."
+   sudo pacman -S --noconfirm git
+   cd ez-dwm-out
+   
+   ;;
+   [Nn]* ) 
+   echo "Downloading via wget..."
+   sudo pacman -S wget
+   ;;
+   * )
+   echo "Please answer either y (yes) or n (no)"
+   ;;
+esac
+done
 
 
 
