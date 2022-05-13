@@ -108,7 +108,7 @@ Please enter an email for git: \c"
    sudo make clean install
    
    cd ~
-   sed a "exec dwm" .xinitrc
+   sed '0 a exec dwm' .xinitrc
    
    
    ;;
@@ -136,7 +136,7 @@ Please enter an email for git: \c"
    
    cd ..
    sudo rm -rf work
-   sed a "exec dwm" .xinitrc
+   sed '0 a exec dwm' .xinitrc
    
    break
    ;;
