@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# If you somehow don't have bash, please install it. It's a little something guys like me in the tech world call a "dependency"
-# Also, if you get a "command not found" error somehow, then please install that using "sudo pacman -S (command, or package that contains it)"
-# No, I don't know why I'm making this so user-friendly.
+# Be sure to read the README before doing anything!!!!!!!!!
 
 # Root Check!!!!!!!!
 
@@ -67,9 +65,6 @@ useradd -m -G $groups $username
 
 # I should make the above code a utility for linux beginners. Maybe someday.
 
-# Installing base packages for compatibility.
-
-pacman -S --noconfirm base base-devel
 
 # Funny line and start of the actual process of downloading dwm and stuff. (These are the lines you'd probably want to edit for compatibility and customization)
 
@@ -85,8 +80,6 @@ case $yntwo in
    [Yy]* )
    echo "Downloading through git..."
    
-   # The line below is where you can customize what packages you want to download initially. I have put some minimal packages here, but you can add or remove packages as you please. 
-   sudo pacman -S --noconfirm git xorg-server xorg-xinit xorg-xrandr
    cd ez-dwm-out
    
    echo -e "
@@ -121,7 +114,6 @@ Please enter an email for git: \c"
    ;;
    [Nn]* ) 
    echo "Downloading via wget..."
-   sudo pacman -S --noconfirm wget xorg-server xorg-xinit xorg-xrandr
    
    cd work
    wget https://dl.suckless.org/dwm/dwm-6.3.tar.gz
