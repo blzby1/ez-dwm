@@ -16,7 +16,7 @@ This is intended to be run right after a fresh installation, so make sure you ha
 
 Next, install dependencies. On Arch Linux:
 
-    sudo pacman -S git xorg-server xorg-xrandr wget base base-devel
+    sudo pacman -S git xorg-server xorg-xrandr xorg-xinit wget base base-devel
 
 git clone the this repository:
 
