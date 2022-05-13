@@ -68,8 +68,8 @@ useradd -m -G $groups $username
 
 # Funny line and start of the actual process of downloading dwm and stuff. (These are the lines you'd probably want to edit for compatibility and customization)
 
-su $username
-cd ~
+
+cd /home/$username
 mkdir work
 mkdir ez-dwm-out
 
@@ -107,7 +107,7 @@ Please enter an email for git: \c"
    make
    sudo make clean install
    
-   cd ~
+   cd ..
    sed '0 a exec dwm' .xinitrc
    
    
