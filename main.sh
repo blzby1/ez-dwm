@@ -96,16 +96,13 @@ Please enter an email for git: \c"
    git clone https://git.suckless.org/dmenu
    
    cd dwm
-   make
-   sudo make clean install
+   make clean install
    
    cd ../st
-   make
-   sudo make clean install
+   make clean install
    
    cd ../dmenu
-   make
-   sudo make clean install
+   make clean install
    
    cd ..
    sed '0 a exec dwm' .xinitrc
@@ -126,16 +123,16 @@ Please enter an email for git: \c"
    tar -xzf ../work/dmenu-5.1.tar.gz
    
    cd dwm-6.3
-   sudo make clean install
+   make clean install
    
    cd ../st-0.8.5
-   sudo make clean install
+   make clean install
    
    cd ../dmenu-5.1
-   sudo make clean install
+   make clean install
    
    cd ..
-   sudo rm -rf work
+   rm -rf work
    sed '0 a exec dwm' .xinitrc
    
    break
