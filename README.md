@@ -14,7 +14,7 @@ Make sure you are using the bash shell and are on Arch Linux (preferrably, this 
 
 This is intended to be run right after a fresh installation, so make sure you have sudo set up. Follow [this article](https://wiki.archlinux.org/title/sudo) and configure sudo to your liking so that the script can run.
 
-Next, install dependencies. On Arch Linux:
+Next, install "dependencies". The script may work without some, but be sure to install all packages. (Unless you know what you are doing) On Arch Linux:
 
     sudo pacman -S git xorg-server xorg-xrandr xorg-xinit wget base base-devel
 
