@@ -16,7 +16,7 @@ This is intended to be run right after a fresh installation, so make sure you ha
 
 Next, install "dependencies". The script may work without some, but be sure to install all packages. (Unless you know what you are doing) On Arch Linux:
 
-    sudo pacman -S git xorg-server xorg-xrandr xorg-xinit wget base base-devel libxft libx11 libxinerama
+    sudo pacman -Sy git xorg-server xorg-xrandr xorg-xinit wget base base-devel libxft libx11 libxinerama
 
 git clone the this repository:
 
