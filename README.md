@@ -12,7 +12,7 @@ I got really bored of having to do these steps over and over again, so this just
 
 Make sure you are using the bash shell and are on Arch Linux (preferrably, this may work on other distros).
 
-This is intended to be run right after a fresh installation, so make sure you have sudo set up. Follow [this article](https://wiki.archlinux.org/title/sudo) and configure sudo to your liking so that the script can run.
+This is intended to be run right after a fresh installation, so make sure you have sudo set up. Follow [this article](https://wiki.archlinux.org/title/sudo#Using_visudo) and configure sudo to your liking so that the script can run.
 
 Next, install "dependencies". The script may work without some, but be sure to install all packages. (Unless you know what you are doing) On Arch Linux:
 
