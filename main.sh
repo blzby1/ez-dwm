@@ -141,8 +141,7 @@ Please enter an email for git: \c"
    echo "Please answer either y (yes) or n (no)"
    ;;
 esac
-  
-done
+
 
 echo -e "Be sure to reboot and login as the user you just created. Hit enter/return to make a password for the newly created user and to exit this script. \c"
 read
