@@ -26,8 +26,10 @@ Make main.sh executable:
 
     chmod +x ez-dwm/main.sh
 
-Execute ez-dwm/main.sh, follow the directions onscreen, and enjoy!
+Execute ``ez-dwm/main.sh``, follow the directions onscreen, and enjoy!
 
 ## Notes and Warnings
 
 This script is pretty "stupid" and can't really pick out that many errors. There are some safeguards in place, but they are very minimal. If you encounter a bug, be sure to open an issue so that the bug can be resolved.
+
+Also, just in case you didn't know how to, you can start dwm with the command ``startx`` (since this script uses xinitrc)
