@@ -73,6 +73,12 @@ cd /home/$username
 mkdir work
 mkdir ez-dwm-out
 
+echo "Downloading dependencies, this may take a while..."
+
+pacman --noconfirm -Sy git xorg-server xorg-xrandr xorg-xinit wget base base-devel libxft libx11 libxinerama
+
+# Don't edit those packages unless you know what you are doing!!!!!!!!!
+
 echo -e "
 Use git to download dwm, st and dmenu? (This will make patching and adding modifications easier) [y/n] \c"
 read yntwo
