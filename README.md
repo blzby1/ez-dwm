@@ -14,11 +14,7 @@ Make sure you are using the bash shell and are on Arch Linux (preferrably, this 
 
 This is intended to be run right after a fresh installation, so make sure you have sudo set up. Follow [this article](https://wiki.archlinux.org/title/sudo#Using_visudo) and configure sudo according to the "Example Entries" section to your liking.
 
-Next, install "dependencies". The script may work without some, but be sure to install all packages. (Unless you know what you are doing) On Arch Linux:
-
-    sudo pacman -Sy git xorg-server xorg-xrandr xorg-xinit wget base base-devel libxft libx11 libxinerama
-
-git clone the this repository:
+To get going, git clone the this repository:
 
     git clone https://github.com/blzby1/ez-dwm.git
     
