@@ -10,7 +10,7 @@ I got really bored of having to do these steps over and over again, so this just
 
 ## Install
 
-Make sure you are using the bash shell and are on Arch Linux (preferrably, this may work on other distros).
+Make sure you are using the bash shell and are on Arch Linux.
 
 This is intended to be run right after a fresh installation, so make sure you have sudo set up. Follow [this article](https://wiki.archlinux.org/title/sudo#Using_visudo) and configure sudo according to the "Example Entries" section to your liking.
 
