@@ -141,8 +141,6 @@ Please enter an email for git: \c"
    cd ..
    rm -rf work
    (echo "exec dwm") | sed '1w .xinitrc'
-   
-   break
    ;;
    * )
    echo "Please answer either y (yes) or n (no)"
