@@ -75,7 +75,7 @@ mkdir ez-dwm-out
 
 echo "Downloading dependencies, this may take a while..."
 
-pacman --noconfirm -Sy git xorg-server xorg-xrandr xorg-xinit wget base base-devel libxft libx11 libxinerama
+pacman --noconfirm -Sy git xorg-server xorg-xrandr xorg-xinit wget base base-devel
 
 # Don't edit those packages unless you know what you are doing!!!!!!!!!
 
