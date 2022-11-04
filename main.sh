@@ -68,6 +68,8 @@ useradd -m -G $groups $username
 
 # Funny line and start of the actual process of downloading dwm and stuff. (These are the lines you'd probably want to edit for compatibility and customization)
 
+echo "WARNING: This script will download some packages that may be excessive/bloated or non-free. Press enter to download these packages: base, base-devel, git, xorg, xorg-xinit, wget. \c"
+read
 
 cd /home/$username
 mkdir work
@@ -75,7 +77,7 @@ mkdir ez-dwm-out
 
 echo "Downloading dependencies, this may take a while..."
 
-pacman --noconfirm -Sy git xorg-server xorg-xrandr xorg-xinit wget base base-devel
+pacman --noconfirm -Sy base base-devel git xorg xorg-xinit wget
 
 # Don't edit those packages unless you know what you are doing!!!!!!!!!
 
@@ -112,7 +114,9 @@ Please enter an email for git: \c"
    
    cd ..
    rm -rf work
-   (echo "exec dwm") | sed '1w .xinitrc'
+   echo "
+   
+   IMPORTANT: Please add the line "exec dwm" to a file named .xintrc in order to use startx."
    
    
    ;;
@@ -140,7 +144,9 @@ Please enter an email for git: \c"
    
    cd ..
    rm -rf work
-   (echo "exec dwm") | sed '1w .xinitrc'
+   echo "
+   
+   IMPORTANT: Please add the line "exec dwm" to a file named .xintrc in order to use startx."
    ;;
    * )
    echo "Please answer either y (yes) or n (no)"
